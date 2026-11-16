@@ -43,7 +43,7 @@ python inspect_frame.py --model models/int8.onnx --input data/coatingvision-demo
 2. 训练输出单通道裂纹分数图的分割模型，保存验证集上选出的权重，导出 FP32 ONNX。
 3. 用校准集得到 INT8 模型。在同一 CPU 和测试集上比较两份模型的裂纹像素召回、无裂纹图误报、Dice 与端到端耗时。
 4. 让仿真工位按固定间隔触发图像，把逐帧实测耗时送入有限容量的队列，记录每帧按时完成、超时或丢弃的原因。
-5. C++ 学习从一帧图像的尺寸开始，逐步实现能与 Python 基准逐帧核对的推理程序。
+5. C++ 参考程序从预解码的灰度帧开始，在 Windows x64 上独立构造输入张量并运行 ONNX Runtime。对一张测试图分别核对 FP32 和 INT8，每份模型的 76,800 个输出分数与同版本 Python 参考端完全一致。JPEG 读入和缩放由 Python 完成。[C++ 编译与核对步骤](native/README.md) · [实测记录](reports/native.json)
 
 ## 复现实验
 

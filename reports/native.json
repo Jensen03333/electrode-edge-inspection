@@ -1,0 +1,29 @@
+{
+  "frame": "image_101.jpg",
+  "frame_sha256": "56a3262eca68a968a20f747098a7cdd6c6d37e60186d32caee0617da8f124720",
+  "input_shape": [
+    1,
+    1,
+    240,
+    320
+  ],
+  "onnxruntime": "1.20.1",
+  "provider": "CPUExecutionProvider",
+  "threads": 1,
+  "scope": "Python decodes and resizes one held-out photograph. C++ reads identical PGM bytes and runs ORT.",
+  "logit_atol": 1e-05,
+  "logit_rtol": 1e-05,
+  "decision_threshold": 0.0,
+  "fp32": {
+    "model_sha256": "59313d0f0251f748c38c6d1796f918f19073d0eb5b88c9331f1e586cdc0cc574",
+    "compared_pixels": 76800,
+    "different_decisions": 0,
+    "max_abs_logit_error": 0.0
+  },
+  "int8": {
+    "model_sha256": "6fb90bb4248a9a9ff468ce94f145e7812f592659afbf0fbcac1eca76b43b9b37",
+    "compared_pixels": 76800,
+    "different_decisions": 0,
+    "max_abs_logit_error": 0.0
+  }
+}
