@@ -1,0 +1,87 @@
+{
+  "architecture": "CrackUNet channels 8-16-32",
+  "parameters": 29777,
+  "seed": 17,
+  "torch_version": "2.5.1+cu121",
+  "device": "cuda",
+  "training_device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+  "train_frames": 1345,
+  "val_frames": 303,
+  "train_groups": 4,
+  "val_groups": 1,
+  "train_manifest_sha256": "943b671babed4a9385e104c4977f2f08f2ded57810731c857c536983a5fded93",
+  "val_manifest_sha256": "7a29a4f1c1b2a551ebe40857a008c09ddb97438bfb9574e0a27719ae772eace1",
+  "input_hw": [
+    240,
+    320
+  ],
+  "train_foreground_fraction": 0.02579318657063197,
+  "bce_positive_weight": 6.145724410816682,
+  "learning_rate": 0.002,
+  "batch_size": 8,
+  "validation_metric": "Micro pixel Dice at training resolution, logits >= 0",
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.2057812119062061,
+      "val_dice_micro": 0.680206555412143
+    },
+    {
+      "epoch": 2,
+      "loss": 0.5982268329668222,
+      "val_dice_micro": 0.5233316952655352
+    },
+    {
+      "epoch": 3,
+      "loss": 0.35322189286738964,
+      "val_dice_micro": 0.6848471448840134
+    },
+    {
+      "epoch": 4,
+      "loss": 0.3145432750088575,
+      "val_dice_micro": 0.7336030928416046
+    },
+    {
+      "epoch": 5,
+      "loss": 0.2988287968263307,
+      "val_dice_micro": 0.6993175682942202
+    },
+    {
+      "epoch": 6,
+      "loss": 0.29230307807044914,
+      "val_dice_micro": 0.7696673698237466
+    },
+    {
+      "epoch": 7,
+      "loss": 0.2827890574045784,
+      "val_dice_micro": 0.7660801774261522
+    },
+    {
+      "epoch": 8,
+      "loss": 0.27199585692590056,
+      "val_dice_micro": 0.7321338679720183
+    },
+    {
+      "epoch": 9,
+      "loss": 0.27158932200594904,
+      "val_dice_micro": 0.7673037156986667
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2636797652811809,
+      "val_dice_micro": 0.7861880002870433
+    },
+    {
+      "epoch": 11,
+      "loss": 0.2594207507416218,
+      "val_dice_micro": 0.7618183333070616
+    },
+    {
+      "epoch": 12,
+      "loss": 0.25952543550929175,
+      "val_dice_micro": 0.6907398116262629
+    }
+  ],
+  "best_epoch": 10,
+  "best_val_dice_micro": 0.7861880002870433
+}

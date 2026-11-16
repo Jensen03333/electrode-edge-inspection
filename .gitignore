@@ -8,3 +8,5 @@ runs/
 *.zip
 .env
 *.onnx
+!models/fp32.onnx
+!models/int8.onnx
