@@ -1,0 +1,93 @@
+{
+  "model_metric_source": "reports/benchmark.json",
+  "mode": "deterministic discrete-event FIFO; measured per-frame end-to-end service times",
+  "clock": "simulated arrival and completion timestamps; one worker, two waiting slots",
+  "timing_boundary": "Replays the measured frame durations once per scenario; no physical camera, PLC or wall-clock streaming.",
+  "latency_scope": "Arrival to completion for admitted frames; dropped frames counted separately.",
+  "cycles": 1,
+  "queue_capacity_waiting": 2,
+  "workers": 1,
+  "cpu_threads_per_worker": 1,
+  "timing_trace_sha256": {
+    "fp32": "407d2ec4ba39fc31bb28b628e0e4ff7014af80a96c4c69240879983ece3d0753",
+    "int8": "f5c50a5ce439974e521c57294efe73364307937f498565b123da9a2b5e05567d"
+  },
+  "scenarios": [
+    {
+      "model": "fp32",
+      "fps": 30,
+      "arrival_ms": 33.333333333333336,
+      "deadline_ms": 66.66666666666667,
+      "arrivals": 275,
+      "completed": 275,
+      "dropped_queue_full": 0,
+      "completed_late": 0,
+      "delivered_on_time": 275,
+      "elapsed_simulated_ms": 9156.105733333334,
+      "completed_frames_per_second": 30.03460292063323,
+      "completed_latency_ms": {
+        "p50": 22.127599999999802,
+        "p95": 25.668950000000226,
+        "p99": 29.9209900000003,
+        "max": 34.637899999999945
+      }
+    },
+    {
+      "model": "fp32",
+      "fps": 100,
+      "arrival_ms": 10.0,
+      "deadline_ms": 20.0,
+      "arrivals": 275,
+      "completed": 125,
+      "dropped_queue_full": 150,
+      "completed_late": 125,
+      "delivered_on_time": 0,
+      "elapsed_simulated_ms": 2804.4795000000004,
+      "completed_frames_per_second": 44.571550621068894,
+      "completed_latency_ms": {
+        "p50": 61.46550000000002,
+        "p95": 70.1618400000003,
+        "p99": 72.65148800000016,
+        "max": 77.13240000000019
+      }
+    },
+    {
+      "model": "int8",
+      "fps": 30,
+      "arrival_ms": 33.333333333333336,
+      "deadline_ms": 66.66666666666667,
+      "arrivals": 275,
+      "completed": 274,
+      "dropped_queue_full": 1,
+      "completed_late": 107,
+      "delivered_on_time": 167,
+      "elapsed_simulated_ms": 9225.137766666669,
+      "completed_frames_per_second": 29.701453455800777,
+      "completed_latency_ms": {
+        "p50": 58.447883333333266,
+        "p95": 92.98112499999995,
+        "p99": 97.28351799999984,
+        "max": 106.90930000000003
+      }
+    },
+    {
+      "model": "int8",
+      "fps": 100,
+      "arrival_ms": 10.0,
+      "deadline_ms": 20.0,
+      "arrivals": 275,
+      "completed": 84,
+      "dropped_queue_full": 191,
+      "completed_late": 84,
+      "delivered_on_time": 0,
+      "elapsed_simulated_ms": 2813.9571000000005,
+      "completed_frames_per_second": 29.851201356268007,
+      "completed_latency_ms": {
+        "p50": 95.30250000000024,
+        "p95": 105.17126500000003,
+        "p99": 110.41009500000072,
+        "max": 113.95710000000054
+      }
+    }
+  ]
+}

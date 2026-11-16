@@ -1,0 +1,83 @@
+{
+  "cpu": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "architecture": "AMD64",
+  "onnxruntime": "1.31.1",
+  "provider": "CPUExecutionProvider",
+  "threads": 1,
+  "warmup_frames_per_model": 3,
+  "logit_threshold": 0.0,
+  "evaluation_manifest_sha256": "099e08c5aed5a301b71ab1098f82ba61c2e48220748eeb0346de4f1aebbb4579",
+  "replay_image_root_relative_to_data_root": "test/images",
+  "timed_scope": "file read + bilinear resize + [0,1] conversion + inference + mask decision",
+  "missed_positive_frame": "positive frame with zero overlapping predicted crack pixels",
+  "false_alarm_frame": "frame without a surface crack with any predicted crack pixel",
+  "int8_vs_fp32": {
+    "pixel_decision_change_fraction": 0.0011244910037878787,
+    "positive_frames_losing_all_overlap": 0,
+    "positive_frames_gaining_overlap": 0
+  },
+  "fp32": {
+    "tp_px": 1219696,
+    "fp_px": 282633,
+    "fn_px": 525794,
+    "positive_frame": 236,
+    "missed_positive_frame": 0,
+    "false_alarm_frame": 33,
+    "images": 275,
+    "dice_micro": 0.7510861904558105,
+    "pixel_recall": 0.6987699729015922,
+    "negative_frame": 39,
+    "latency_p50_ms": 22.1276,
+    "latency_p95_ms": 25.668950000000002,
+    "onnx_bytes": 123517,
+    "sha256": "59313d0f0251f748c38c6d1796f918f19073d0eb5b88c9331f1e586cdc0cc574"
+  },
+  "int8": {
+    "tp_px": 1222289,
+    "fp_px": 279093,
+    "fn_px": 523201,
+    "positive_frame": 236,
+    "missed_positive_frame": 0,
+    "false_alarm_frame": 32,
+    "images": 275,
+    "dice_micro": 0.7529024858386779,
+    "pixel_recall": 0.7002555156431718,
+    "negative_frame": 39,
+    "latency_p50_ms": 32.8653,
+    "latency_p95_ms": 38.16773,
+    "onnx_bytes": 56991,
+    "sha256": "6fb90bb4248a9a9ff468ce94f145e7812f592659afbf0fbcac1eca76b43b9b37"
+  },
+  "machine": "Intel Core i7-12700H laptop CPU",
+  "batch_size": 1,
+  "intra_op_threads": 1,
+  "inter_op_threads": 1,
+  "inference_workers": 1,
+  "models_evaluated_in_alternating_order": true,
+  "dataset": "CoatingVision v1 (segmentation surface-crack channel)",
+  "split": "held-out acquisition group",
+  "calibration_frames": 304,
+  "calibration_groups": [
+    "R1-900um"
+  ],
+  "calibration_manifest_sha256": "0227cf53e9907ad1d36a6314c6399bf52c62910e2a8fc928916e6d6f62ab5181",
+  "target_operators": [
+    "Conv"
+  ],
+  "conv_nodes": 11,
+  "int8_conv_nodes": 11,
+  "cpu_profile_one_frame_kernels": {
+    "QuantizeLinear": 11,
+    "Transpose": 6,
+    "QLinearConv": 11,
+    "DequantizeLinear": 11,
+    "Relu": 4,
+    "ReorderInput": 2,
+    "MaxPool": 2,
+    "ReorderOutput": 2,
+    "Resize": 2,
+    "Concat": 2
+  },
+  "output_grid": "bilinearly resampled logits on the original image grid; fixed threshold",
+  "timing_boundary": "One warmed CPU run per test image for each model. Camera, transport, ground-truth loading and output persistence excluded."
+}
