@@ -64,4 +64,8 @@ python review_errors.py
 
 [裂纹像素召回最低的帧](reports/errors/lowest-int8-recall.png) · [量化后召回下降最多的帧](reports/errors/largest-recall-loss.png) · [无此类裂纹但误报像素最多的帧](reports/errors/largest-negative-alarm.png)。每幅图从左至右为原图、FP32、INT8。绿色是命中，红色是漏检，蓝色是误报。选择规则写在 `review_errors.py` 中；这些图用于解释已冻结模型的结果。
 
+## 换成真实锂电极片照片
+
+冻结两份模型后，用 Schoo 等人发表的两张中试线极片图进行跨材料检查。暗色主裂纹上有连续响应，也有背景散点；亮色泥裂上的响应较断续。两张出版图片没有像素级真值，因此这里展示预测叠图，尚无真实锂电极片检出率。[外部样例、出处与复现](reports/external/README.md)
+
 对照图由本项目从 Vignesh Sampath、Andrew S. Lee、Samuel David Miller、Noah H. Paulson、Yuepeng Zhang 与 Logan Ward 发布的 CoatingVision v1 图像及标注制作，添加了预测叠加与文字说明。原数据使用 CC BY 4.0。[数据出处](https://doi.org/10.6084/m9.figshare.29260121.v1) · [许可](https://creativecommons.org/licenses/by/4.0/) · [作者样本仓库](https://github.com/vigsam-coder/CoatingVision)

@@ -1,0 +1,44 @@
+{
+  "article": "https://doi.org/10.3390/batteries9020111",
+  "source_figure": "https://pub.mdpi-res.com/batteries/batteries-09-00111/article_deploy/html/images/batteries-09-00111-g003.png",
+  "source_figure_size": [
+    3128,
+    2796
+  ],
+  "source_figure_sha256": "79a7c5065467a4a564d156db0e66d59e4e53c2fffc34471565198b68de7d714e",
+  "source_license": "CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)",
+  "model_sha256": {
+    "fp32": "59313d0f0251f748c38c6d1796f918f19073d0eb5b88c9331f1e586cdc0cc574",
+    "int8": "6fb90bb4248a9a9ff468ce94f145e7812f592659afbf0fbcac1eca76b43b9b37"
+  },
+  "logit_threshold": 0.0,
+  "evidence": "Visual examples only; publication panels have no pixel annotations.",
+  "samples": {
+    "3b-coating-crack": {
+      "crop_xyxy_exclusive": [
+        1120,
+        2260,
+        1760,
+        2740
+      ],
+      "width": 640,
+      "height": 480,
+      "fp32_predicted_pixels": 8799,
+      "int8_predicted_pixels": 8536,
+      "different_prediction_pixels": 773
+    },
+    "3e-mud-crack": {
+      "crop_xyxy_exclusive": [
+        1005,
+        185,
+        1425,
+        500
+      ],
+      "width": 420,
+      "height": 315,
+      "fp32_predicted_pixels": 3803,
+      "int8_predicted_pixels": 3544,
+      "different_prediction_pixels": 579
+    }
+  }
+}
